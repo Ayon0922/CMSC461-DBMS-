@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:15
+    container_name: umbc_parking_db
+    environment:
+      POSTGRES_USER: umbc_admin
+      POSTGRES_PASSWORD: umbc_password
+      POSTGRES_DB: parking_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: umbc_pgadmin
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@umbc.edu
+      PGADMIN_DEFAULT_PASSWORD: admin_password
+    ports:
+      - "5050:80"
+    depends_on:
+      - db
+
+volumes:
+  pgdata:
