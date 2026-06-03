@@ -8,7 +8,7 @@ Host: umbc_parking_db (inside Docker network) or localhost (from host)
 Username: admin@umbc.edu
 Password: admin
 Database: parking_db
-
+TO use the UI, open terminal, go to the folder where you have the app.py saved, use pip install streamlit, then use streamlit run app.py, it will open the UI in your preffered web browser.
 FOLLOW THE EXACT EXECUTION ORDER:
     dropDDL.sql: Resets the environment by dropping existing tables and views.
 
